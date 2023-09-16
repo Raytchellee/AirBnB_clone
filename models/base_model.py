@@ -1,18 +1,18 @@
 #!/usr/bin/python3
-"""Defines the BaseModel class."""
+"""Defines BaseModel class."""
 import models
 from uuid import uuid4
 from datetime import datetime
 
 
 class BaseModel:
-    """Represents the BaseModel of the HBnB project."""
+    """BaseModel for the HBnB project."""
 
     def __init__(self, *args, **kwargs):
-        """Initialize a new BaseModel.
+        """Initialize new BaseModel.
         Args:
-            *args (any): Unused.
-            **kwargs (dict): Key/value pairs of attributes.
+            *args: Unused.
+            **kwargs: Key/value pairs of attributes.
         """
         tform = "%Y-%m-%dT%H:%M:%S.%f"
         self.id = str(uuid4())
@@ -35,7 +35,7 @@ class BaseModel:
     def to_dict(self):
         """Return the dictionary of the BaseModel instance.
         Includes the key/value pair __class__ representing
-        the class name of the object.
+        classname of the object.
         """
         rdict = self.__dict__.copy()
         rdict["created_at"] = self.created_at.isoformat()
